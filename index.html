@@ -24,12 +24,8 @@
         header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3); }
         .badge { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; letter-spacing: 0.5px; }
         h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.35; margin-bottom: 16px; word-break: keep-all; }
-        p.subtitle { font-size: 1.15rem; color: #94a3b8; margin-bottom: 28px; font-weight: 400; }
+        p.subtitle { font-size: 1.15rem; color: #94a3b8; margin-bottom: 0; font-weight: 400; } /* 여백 수정 */
         
-        .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 8px; background-color: var(--accent); color: white; text-decoration: none; padding: 12px 28px; border-radius: 10px; font-weight: 600; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
-        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
-
         /* Stats Grid */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 48px; }
         .stat-card { background: var(--card-bg); padding: 24px 20px; border-radius: 14px; border: 1px solid var(--border); text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
@@ -63,7 +59,7 @@
         /* Footer */
         footer { text-align: center; padding: 40px 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; margin-top: 60px; }
         footer h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--primary); }
-        footer p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        footer p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
 
         @media (max-width: 640px) {
             h1 { font-size: 1.8rem; }
@@ -79,9 +75,6 @@
             <span class="badge">Europe B2B Business Developer</span>
             <h1>AI로 유럽 시장을 분석하고,<br>현장에서 글로벌 B2B 딜을 만듭니다.</h1>
             <p class="subtitle">이태훈 | Data-Driven Execution & Global Operations</p>
-            <div class="btn-group">
-                <a href="mailto:Ith612@naver.com" class="btn">✉️ 이메일 문의하기</a>
-            </div>
         </header>
 
         <!-- Key Metrics -->
@@ -121,7 +114,6 @@
                     <li>북미 현지 오프라인 뷰티 샵/팝업 진출 타진 및 MOQ 협의를 통한 실질적 파트너십 체결</li>
                 </ul>
                 
-                <!-- 파일명 뒤에 .jpg를 한 번 더 붙여서 실제 파일명과 맞춤 -->
                 <div class="media-grid">
                     <div class="media-box">
                         <img src="expo.jpg" alt="2025 라스베가스 코스모프로프">
@@ -171,7 +163,6 @@
                     <li>데이터 기반 시장 동향 리포트 도출 및 파트너사 맞춤형 B2B 컨설팅 제공</li>
                 </ul>
                 
-                <!-- 파일명 뒤에 .jpg를 한 번 더 붙여서 실제 파일명과 맞춤 -->
                 <div class="media-box-full">
                     <img src="ai-tool.png" alt="직접 구축한 외부 마케팅 프로그램 통합 운영 매뉴얼 웹사이트">
                     <div class="media-caption">💻 직접 기획/개발한 외부 마케팅 프로그램 통합 운영 매뉴얼 & 예산 계산기 웹사이트</div>
@@ -183,7 +174,6 @@
         <footer>
             <h3>구다이글로벌 유럽팀과 함께 성장할 준비가 되어 있습니다.</h3>
             <p>Email: Ith612@naver.com | Phone: 010-9408-3828</p>
-            <a href="mailto:Ith612@naver.com" class="btn">이메일 문의하기</a>
         </footer>
     </div>
 </body>
