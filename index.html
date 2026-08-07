@@ -3,103 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이태훈 | 글로벌 B2B 사업개발 & 해외영업</title>
+    <title>이태훈 | 글로벌 B2B 사업개발 포트폴리오</title>
     <style>
         :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --bg-color: #f8fafc;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg: #f8fafc;
             --card-bg: #ffffff;
-            --text-color: #334155;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        
-        header { text-align: center; padding: 60px 0 40px; border-bottom: 1px solid #e2e8f0; }
-        .badge { display: inline-block; background-color: #e0e7ff; color: #3730a3; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-        h1 { font-size: 2.2rem; color: var(--primary-color); word-break: keep-all; margin-bottom: 12px; }
-        p.subtitle { font-size: 1.1rem; color: #64748b; margin-bottom: 24px; }
-        
-        section { margin: 40px 0; }
-        h2 { font-size: 1.5rem; color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; margin-bottom: 24px; display: inline-block; }
-        
-        .card { background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-        .card h3 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 8px; }
-        .metrics { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
-        .tag { background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
-        ul { padding-left: 20px; margin-top: 12px; }
-        li { margin-bottom: 6px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
 
-        .img-placeholder { background-color: #e2e8f0; border-radius: 8px; height: 180px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.9rem; margin-top: 16px; text-align: center; }
+        /* Hero Section */
+        header { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2); }
+        .badge { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; letter-spacing: 0.5px; }
+        h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.3; margin-bottom: 16px; word-break: keep-all; }
+        p.subtitle { font-size: 1.1rem; color: #94a3b8; margin-bottom: 24px; font-weight: 400; }
+        
+        .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; background-color: var(--accent); color: white; text-decoration: none; padding: 10px 24px; border-radius: 10px; font-weight: 600; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
 
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid #e2e8f0; margin-top: 60px; }
-        .btn { display: inline-block; background-color: var(--accent-color); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; margin-top: 12px; }
-        .btn:hover { background-color: #1d4ed8; }
+        /* Stats Grid */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+        .stat-card { background: var(--card-bg); padding: 20px; border-radius: 14px; border: 1px solid var(--border); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+
+        /* Section & Cards */
+        section { margin-bottom: 48px; }
+        h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        h2::before { content: ''; display: inline-block; width: 4px; height: 20px; background-color: var(--accent); border-radius: 2px; }
+        
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03); transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08); }
+        .card h3 { color: var(--primary); font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+        
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .tag { background: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+        
+        ul { padding-left: 20px; color: var(--text-main); }
+        li { margin-bottom: 8px; font-size: 0.98rem; }
+        
+        /* Media Grid for Images */
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 20px; }
+        .media-box { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #f1f5f9; }
+        .media-box img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .media-caption { padding: 10px 14px; font-size: 0.82rem; color: var(--text-muted); background: #ffffff; border-top: 1px solid var(--border); font-weight: 500; }
+
+        .media-box-full { margin-top: 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #f1f5f9; }
+        .media-box-full img { width: 100%; height: auto; display: block; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; margin-top: 60px; }
+        footer h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--primary); }
+        footer p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 20px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Hero Section -->
         <header>
             <span class="badge">Europe B2B Business Developer</span>
             <h1>AI로 유럽 시장을 분석하고,<br>현장에서 글로벌 B2B 딜을 만듭니다.</h1>
-            <p class="subtitle">이태훈 | Data-Driven Execution & Tech-savvy B2B Sales</p>
+            <p class="subtitle">이태훈 | Data-Driven Execution & Global Operations</p>
+            <div class="btn-group">
+                <a href="mailto:Ith612@naver.com" class="btn">✉️ 이메일 문의하기</a>
+            </div>
         </header>
 
+        <!-- Key Metrics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,880+</div>
+                <div class="stat-label">글로벌 B2B 타겟 DB 구축</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7,400+</div>
+                <div class="stat-label">글로벌 마케팅 캠페인 총괄</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2025</div>
+                <div class="stat-label">라스베가스 코스모프로프 현장 피칭</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Europe</div>
+                <div class="stat-label">프랑스/헝가리 현지 체류 경험</div>
+            </div>
+        </div>
+
+        <!-- Project 1 -->
         <section>
-            <h2>01. 글로벌 B2B 개척 & 현장 세일즈</h2>
+            <h2>01. 글로벌 B2B 파이프라인 개척 & 현장 세일즈</h2>
             <div class="card">
-                <h3>미주/글로벌 뷰티 시장 B2B 파이프라인 구축</h3>
-                <div class="metrics">
+                <h3>미주/글로벌 뷰티 시장 B2B 파이프라인 구축 및 현지 제휴</h3>
+                <div class="tags">
                     <span class="tag">1,880+ DB 구축</span>
                     <span class="tag">주 20+ 유효 리드</span>
-                    <span class="tag">2025 코스모프로프 참가</span>
+                    <span class="tag">2025 코스모프로프</span>
+                    <span class="tag">오프라인 파트너십</span>
                 </div>
                 <ul>
-                    <li>뷰티 브랜드 등 1,880여 개 타겟 로우 데이터 직접 구축 및 맞춤형 이메일 아웃바운드 수행</li>
-                    <li>2025 라스베가스 코스모프로프 현장 참가하여 대면 피칭 및 신규 파트너십 리드 확보</li>
-                    <li>바이어 N차 심층 미팅 및 MOQ/단가 협상을 통한 End-to-End 계약 완수</li>
+                    <li>뷰티 브랜드 등 1,880여 개 잠재 고객 DB를 직접 구축하고 맞춤형 아웃바운드 세일즈 수행</li>
+                    <li>2025 라스베가스 코스모프로프(Cosmoprof) 현장 참가 및 유망 브랜드 대상 대면 피칭 진행</li>
+                    <li>북미 현지 오프라인 뷰티 샵/팝업 진출 타진 및 MOQ 협의를 통한 실질적 파트너십 체결</li>
                 </ul>
+                
+                <!-- 현장 사진 2장 배치 -->
+                <div class="media-grid">
+                    <div class="media-box">
+                        <img src="expo.jpg" alt="2025 라스베가스 코스모프로프">
+                        <div class="media-caption">📍 2025 라스베가스 코스모프로프 현장 참관 및 네트워킹</div>
+                    </div>
+                    <div class="media-box">
+                        <img src="VegasB2B.jpg" alt="현지 K-Beauty 오프라인 파트너십">
+                        <div class="media-caption">📍 북미 오프라인 뷰티 채널 현장 답사 및 제휴 타진</div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Project 2 -->
         <section>
             <h2>02. 글로벌 PM & 에이전시 오퍼레이션</h2>
             <div class="card">
-                <h3>7,400건 대규모 마케팅 총괄 및 에이전시 관리</h3>
-                <div class="metrics">
+                <h3>7,400건 대규모 마케팅 총괄 및 현지 에이전시 핸들링</h3>
+                <div class="tags">
                     <span class="tag">인스타 5,410건</span>
                     <span class="tag">틱톡 2,000건</span>
-                    <span class="tag">현지 대행사 QC</span>
+                    <span class="tag">에이전시 QC</span>
+                    <span class="tag">단가표 체계화</span>
                 </div>
                 <ul>
-                    <li>북미/글로벌 타겟 7,400건 이상의 인플루언서 시딩 마케팅 총괄 리딩</li>
-                    <li>현지 전문 에이전시 발굴, 원활한 딜레이 없는 커뮤니케이션을 통한 완벽한 퀄리티 컨트롤(QC)</li>
-                    <li>외주 디자인, 다국어 번역 등 파생 업무 단가 산정 기준 체계화 및 오퍼레이션 표준화</li>
+                    <li>북미 및 글로벌 타겟 7,400건 이상의 대규모 인플루언서 시딩 마케팅 총괄 PM 수행</li>
+                    <li>현지 전문 대행사 발굴 및 브랜드사 간 커뮤니케이션 조율을 통한 완벽한 퀄리티 컨트롤(QC)</li>
+                    <li>다국어 번역, 외주 디자인 등 파생 업무에 대한 자체 견적 산정 기준 및 단가표 신규 기획</li>
                 </ul>
             </div>
         </section>
 
+        <!-- Project 3 -->
         <section>
             <h2>03. Tech-savvy BizDev (AI/IT 활용)</h2>
             <div class="card">
-                <h3>AI 기반 마케팅/경쟁사 분석 시스템 직접 구축</h3>
-                <div class="metrics">
-                    <span class="tag">AI 경쟁사 분석</span>
-                    <span class="tag">웹빌더 마케팅 페이지</span>
+                <h3>AI 기반 마케팅 대시보드 & 단가 계산 시스템 직접 개발</h3>
+                <div class="tags">
+                    <span class="tag">AI 운영 매뉴얼</span>
+                    <span class="tag">단가 계산기 제작</span>
+                    <span class="tag">웹빌더 개발</span>
                     <span class="tag">리서치 자동화</span>
                 </div>
                 <ul>
-                    <li>AI 및 노코드 툴을 활용하여 시장 조사 및 경쟁사 제품 비교 분석 자동화 사이트 개발</li>
-                    <li>마케팅/세일즈 랜딩 페이지를 직접 기획 및 구축하여 피칭 설득력 및 전환율 증대</li>
-                    <li>데이터 기반 시장 동향분석(Market Research)을 통한 맞춤형 B2B 컨설팅 제공</li>
+                    <li>채널별 단가 테이블 및 예산 계산기 기능이 포함된 마케팅 통합 운영 매뉴얼 웹사이트 직접 구축</li>
+                    <li>AI 및 노코드 툴을 활용한 시장 분석 인프라 세팅으로 피칭 설득력 강화 및 영업 리소스 대폭 절감</li>
+                    <li>데이터 기반 시장 동향 리포트 도출 및 파트너사 맞춤형 B2B 컨설팅 제공</li>
                 </ul>
+                
+                <!-- 직접 만든 웹사이트 캡처본 -->
+                <div class="media-box-full">
+                    <img src="ai-tool.png" alt="직접 구축한 외부 마케팅 프로그램 통합 운영 매뉴얼 웹사이트">
+                    <div class="media-caption">💻 직접 기획/개발한 외부 마케팅 프로그램 통합 운영 매뉴얼 & 예산 계산기 웹사이트</div>
+                </div>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
-            <h3>함께 유럽 시장을 개척할 준비가 되어 있습니다.</h3>
-            <p style="margin-top: 8px;">Email: Ith612@naver.com | Phone: 010-9408-3828</p>
+            <h3>구다이글로벌 유럽팀과 함께 성장할 준비가 되어 있습니다.</h3>
+            <p>Email: Ith612@naver.com | Phone: 010-9408-3828</p>
             <a href="mailto:Ith612@naver.com" class="btn">이메일 문의하기</a>
         </footer>
     </div>
